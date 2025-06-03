@@ -1,9 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Cheesecake Price Calculator" />
+    <meta name="keywords" content="cheesecake, price, toppings, calculator" />
+    <meta name="author" content="Your Name" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheesecake order Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <p>Paragraph</p>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/script.js" defer></script>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Cheesecake Price Calculator</span>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <table>
+          <tr>
+            <th>
+              <img
+                src="https://www.gaylea.com/wp-content/uploads/2017/11/foodservice_smooth_plain_cheesecake_header.jpg"
+                width="75%" height="auto"
+                alt="Cheesecake Image"
+              />
+            </th>
+          </tr>
+        </table>
+
+        <form action="#">
+          <p>Select the size of cheesecake:</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <!-- Added "No Size" option -->
+            <select class="mdl-textfield__input" id="cheesecake-size">
+              <option value="none">No Size</option>
+              <option value="small">Small ($4.00)</option>
+              <option value="large">Large ($45.00)</option>
+            </select>
+          </div>
+
+          <p>Select your toppings:</p>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="berries">
+            <input type="checkbox" id="berries" class="mdl-checkbox__input" />
+            <span class="mdl-checkbox__label">Fresh Berries (+$4.00)</span>
+          </label>
+          <br />
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="cherry">
+            <input type="checkbox" id="cherry" class="mdl-checkbox__input" />
+            <span class="mdl-checkbox__label">Cherry Topping (+$3.50)</span>
+          </label>
+        </form>
+
+        <!-- Calculate Button -->
+        <br /><br />
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculatePrice()"
+        >
+          Calculate
+        </button>
+
+        <!-- Result Display -->
+        <div id="result" style="margin-top: 20px;">
+          <!-- Subtotal, tax, and total will appear here -->
+        </div>
+      </main>
+    </div>
   </body>
 </html>
